@@ -1,11 +1,11 @@
-package cn.temptation.domain;
+package com.yoshopping.model;
 
 /**
  * 用户信息
  */
 public class User {
     // 成员变量
-    private Integer userid;
+    private Integer userid;//此处用的是integer
     private String username;
     private String password;
 
@@ -44,5 +44,11 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+        return "User [id=" + this.userid + ", userName=" + this.username + ", password="
+                + this.password + "]";
     }
 }

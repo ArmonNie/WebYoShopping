@@ -1,4 +1,4 @@
-package cn.temptation.web;
+package com.yoshopping.controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.temptation.dao.UserDao;
-import cn.temptation.domain.User;
+import com.yoshopping.dao.UserDao;
+import com.yoshopping.model.User;
 
 /**
  * 用户控制器
@@ -30,7 +30,7 @@ public class UserController {
         return "main/index";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(User model, HttpSession session) {
         User user = userDao.findByUsername(model.getUsername());
 
@@ -42,5 +42,5 @@ public class UserController {
             mav.setViewName("index");
             return mav;
         }
-    }
+    }*/
 }

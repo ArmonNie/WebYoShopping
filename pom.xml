@@ -1,21 +1,43 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.armon</groupId>
-  <artifactId>WebYoShopping</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>WebYoShopping Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-        <!-- Spring版本号 -->
+	<!-- 项目id，名字等常规基础配置 -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.armon</groupId>
+	<artifactId>WebYoShopping</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>WebYoShopping</name>
+	<url>http://maven.apache.org</url>
+	
+	<!-- 检查注意核心包一定要完整 -->
+	<!-- 相关jar包版本控制 -->
+	<properties>
+		<!-- Spring版本号 -->
         <spring.version>4.3.8.RELEASE</spring.version>
-  </properties>
-  <dependencies>
-     <!-- Spring相关包 -->
+        <!-- mybatis版本号 -->  
+        <mybatis.version>3.2.6</mybatis.version>  
+        <!-- log4j日志文件管理包版本 -->  
+        <slf4j.version>1.7.7</slf4j.version>  
+        <log4j.version>1.2.17</log4j.version>
+	</properties>
+	
+	<!-- 项目依赖，jar包引用 -->
+	<dependencies>
+	
+		<!-- junit相关包 -->
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+             <!-- 表示开发的时候引入，发布的时候不会加载此包 -->  
+            <scope>test</scope>
+        </dependency>
+        
+		<!-- Spring相关包 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+			<!-- 对应于properties里的version -->
             <version>${spring.version}</version>
         </dependency>
         <dependency>
@@ -100,26 +122,19 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
         </dependency>
-
-        <!-- 单元测试相关包 -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-  <build>
-    <finalName>WebYoShopping</finalName>
-    <plugins>
-       <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                     <source>1.8</source>
-                     <target>1.8</target>
-              </configuration>
-       </plugin>
-</plugins>
-  </build>
+    
+  	<build>
+    	<finalName>WebYoShopping</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
