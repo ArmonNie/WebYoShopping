@@ -6,6 +6,7 @@ package com.yoshopping.model;
 public class User {
     // 成员变量
     private Integer userid;//此处用的是integer
+    private String usernumber;
     private String username;
     private String password;
 
@@ -38,7 +39,15 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
+    public String getUsernumber() {
+		return usernumber;
+	}
+
+	public void setUsernumber(String usernumber) {
+		this.usernumber = usernumber;
+	}
+
+	public String getPassword() {
         return password;
     }
 

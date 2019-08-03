@@ -13,7 +13,7 @@
 	<!-- 相关jar包版本控制 -->
 	<properties>
 		<!-- Spring版本号 -->
-        <spring.version>4.3.8.RELEASE</spring.version>
+        <spring.version>4.3.6.RELEASE</spring.version>
         <!-- mybatis版本号 -->  
         <mybatis.version>3.2.6</mybatis.version>  
         <!-- log4j日志文件管理包版本 -->  
@@ -33,12 +33,18 @@
             <scope>test</scope>
         </dependency>
         
-		<!-- Spring相关包 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
+		<!-- Spring相关包，版本4.3.6.RELEASE（问题：若仓库无对应版本？？） -->
+		<dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
 			<!-- 对应于properties里的version -->
-            <version>${spring.version}</version>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <!-- 阿里云仓库无此版本，是否应该换？？ -->
+            <version>1.8.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -47,12 +53,29 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <artifactId>spring-aspects</artifactId>
+            <!-- 阿里云仓库无此版本，是否应该换？？ -->
             <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <!-- 阿里云无此版本，也可能是自己没找到？Maven是否会去其他仓库下载 -->
             <version>${spring.version}</version>
         </dependency>
         <dependency>
@@ -65,46 +88,130 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <!-- AOP相关包 -->
+        
+     	<!--？？ -->
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.8.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.8.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <!-- MyBatis相关包 -->
         <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+            <!-- 阿里云无此版本，但书本要求此版本！！ -->
+            <!-- <version>1.9.6</version> -->
+            <!-- 问题记录：若未1.9.6，即对应远程仓库无此版本，该jar包缺少造成tomcat无法启动 -->
+            <version>1.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-launcher</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <!-- 阿里云无此版本，但书本要求此版本！！ -->
+            <!-- <version>5.1</version> -->
+            <!-- 问题记录：若为5.1，即对应远程仓库无此版本，该jar包缺少造成tomcat无法启动 -->
+            <version>4.0_RC1</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <!-- 阿里云无此版本，但书本要求此版本！！ -->
+            <!-- <version>3.21.0.GA</version> -->
+            <!-- 问题记录：若为3.21.0.GA，即对应远程仓库无此版本，该jar包缺少造成tomcat无法启动 -->
+            <version>3.9.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>at.willhaben.willtest</groupId>
+            <artifactId>log4j</artifactId>
+            <!-- 阿里云无此版本，但书本要求此版本！！ -->
+            <!-- <version>1.2.17</version> -->
+            <!-- 问题记录：若为1.2.17，即对应远程仓库无此版本，该jar包缺少造成tomcat无法启动 -->
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>ognl</groupId>
+            <artifactId>ognl</artifactId>
+            <version>3.1.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+        <!-- MyBatis核心包 -->
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.2</version>
         </dependency>
-        <!-- MySQL相关包 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.26</version>
-        </dependency>
-        <!-- 数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.20</version>
-        </dependency>
-
+        
+        
         <!-- Spring集成MyBatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
-            <version>1.2.3</version>
+            <version>1.3.1</version>
+        </dependency>
+        
+        
+        <!-- MySQL相关包,数据库驱动jar包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.40</version>
+        </dependency>
+        
+        
+        <!-- DBCP与连接池所需jar包？？？ -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.4.2</version>
         </dependency>
 
-        <!-- JSP标准标签库 -->
+
+        <!-- JSP标准标签库，否则报错无法识别标签 -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -124,6 +231,7 @@
         </dependency>
     </dependencies>
     
+    <!-- pom基础配置 -->
   	<build>
     	<finalName>WebYoShopping</finalName>
 		<plugins>
@@ -137,4 +245,17 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>  
+        <repository>  
+            <id>alimaven</id>  
+            <name>aliyun maven</name>  
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>  
+            <releases>  
+                <enabled>true</enabled>  
+            </releases>  
+            <snapshots>  
+                <enabled>false</enabled>  
+            </snapshots>  
+        </repository>  
+	</repositories>
 </project>
