@@ -6,7 +6,7 @@
 <configuration>
     <!-- 设置别名 -->
     <typeAliases>
-        <package name="com.yoshopping.mapping" />
+        <package name="com.yoshopping.model" />
     </typeAliases>
     <mappers>
     	<mapper resource="com/yoshopping/mapping/UserMapper.xml"/>

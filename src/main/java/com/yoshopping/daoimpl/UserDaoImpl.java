@@ -10,8 +10,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao{
 	@Override
 	public User findByUsername(String username) {
 		// TODO Auto-generated method stub
+		/*return this.getSqlSession().selectOne("com.yoshopping.mapping" 
+		+ ".UserMapper", username);*/
 		return this.getSqlSession().selectOne("com.yoshopping.mapping" 
-		+ ".UserMapper", username);
+				+ ".UserMapper.findByUsername", username);
 	}
 	
 }
