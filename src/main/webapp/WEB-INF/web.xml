@@ -43,7 +43,7 @@
     
     
 	<!-- Spring MVC 核心过滤器 -->  
-    <!-- <servlet>  
+   <servlet>  
 		<servlet-name>SpringMVC</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
         <init-param>  
@@ -55,7 +55,7 @@
     </servlet>  
     <servlet-mapping>  
         <servlet-name>SpringMVC</servlet-name>  
-        此处可以可以配置成*.do，对应struts的后缀习惯  
+     	<!--处可以可以配置成*.do，对应struts的后缀习惯   -->
         <url-pattern>/</url-pattern>  
-    </servlet-mapping>   -->
+    </servlet-mapping>
 </web-app>
