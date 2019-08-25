@@ -26,9 +26,21 @@ public class ProgramUtil {
 
 		//数据库联接测试
 		SqlSession sqlSession = MyBatisUtil.getSqlsession();
-		User user = sqlSession.selectOne("com.yoshopping.mapping"
-				+ ".UserMapper.findByUsername", 1);
-		System.out.println(user.toString());
+		//try {
+			User user = sqlSession.selectOne("com.yoshopping.mapping"
+					+ ".UserMapper.findByUserid", 1);
+			System.out.println(sqlSession.selectOne("com.yoshopping.mapping"
+					+ ".UserMapper.findByUserid", 1).toString());
+			//System.out.println(user.toString());
+		//}
+		//若数据库，没有该数据，需要抓住这个空异常
+		/*catch(NullPointerException npe)
+		{
+			System.out.println("查无此人！");
+		}
+		catch(Exception e) {
+			System.out.println("数据库未知异常");
+		}*/
 		sqlSession.close();
 	     
 	}

@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.yoshopping.model.User;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 /*
  * 注解形式所用Controller与实现接口形式的Controller不是同一个包
  */
@@ -40,6 +44,11 @@ public class LoginController{
 			HttpServletResponse arg1) throws Exception {
 		// TODO Auto-generated method stub
 		ModelAndView mav = new ModelAndView();
+		/*ApplicationContext applicationContext = 
+				new ClassPathXmlApplicationContext("applicationContext.xml");
+		User user = (User)applicationContext.getBean("user");
+		user.setUser_login_name("Tom");*/
+		mav.addObject("name", arg0.getParameter("username"));
 		mav.setViewName("/index.jsp");
 		return mav;
 	}

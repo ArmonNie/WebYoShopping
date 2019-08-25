@@ -3,61 +3,56 @@ package com.yoshopping.model;
 /**
  * 用户信息
  */
+/*
+ * 注意：此实体类属性名与数据库表列名要一直
+ * ，否则会出现查询后返回的对象为空的情况
+ */
 public class User {
     // 成员变量
-    private Integer userid;//此处用的是integer
-    private String usernumber;
-    private String username;
-    private String password;
+    private Integer user_login_id;//此处用的是integer
+    private String user_login_name;
+    private String user_login_password;
 
     // 构造函数
     public User() {
         super();
     }
 
-    public User(Integer userid, String username, String password) {
+    public User(Integer user_login_id, String user_login_name, String user_login_password) {
         super();
-        this.userid = userid;
-        this.username = username;
-        this.password = password;
+        this.user_login_id = user_login_id;
+        this.user_login_name = user_login_name;
+        this.user_login_password = user_login_password;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + this.user_login_id + ", userName=" + this.user_login_name + ", password="
+                + this.user_login_password + "]";
     }
 
     // 成员方法
-    public Integer getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Integer userid) {
-        this.userid = userid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUsernumber() {
-		return usernumber;
+	public Integer getUser_login_id() {
+		return user_login_id;
 	}
 
-	public void setUsernumber(String usernumber) {
-		this.usernumber = usernumber;
+	public void setUser_login_id(Integer user_login_id) {
+		this.user_login_id = user_login_id;
 	}
 
-	public String getPassword() {
-        return password;
-    }
+	public String getUser_login_name() {
+		return user_login_name;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    @Override
-    public String toString() {
-        return "User [id=" + this.userid + ", userName=" + this.username + ", password="
-                + this.password + "]";
-    }
+	public void setUser_login_name(String user_login_name) {
+		this.user_login_name = user_login_name;
+	}
+
+	public String getUser_login_password() {
+		return user_login_password;
+	}
+
+	public void setUser_login_password(String user_login_password) {
+		this.user_login_password = user_login_password;
+	}
 }
