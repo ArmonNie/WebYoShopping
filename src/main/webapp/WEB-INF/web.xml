@@ -42,7 +42,7 @@
     </listener>
     
     
-	<!-- Spring MVC 核心过滤器 -->  
+	<!--SpringMVC核心过滤器，前端过滤器 -->  
    <servlet>  
 		<servlet-name>SpringMVC</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  

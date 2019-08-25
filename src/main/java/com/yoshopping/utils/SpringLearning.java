@@ -1,4 +1,4 @@
-package com.yoshopping.test;
+package com.yoshopping.utils;
 
 public class SpringLearning {
 

@@ -4,18 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--   applicationContext已经配置了数据相关，此文件不需要在配置了？？ -->
 <configuration>
+	<!-- 引入数据库联接配置文件源 -->
+	<properties resource="jdbc.properties" />
+	<!-- settings配置二级缓存，延迟加载等，此处不配置，但依然可以正常运行Mybatis -->
+	<!-- <settings>
+		<setting name= "cacheEnabled " value="true" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value= "true" />
+		<setting name="useGeneratedKeys" value="false" />
+		<setting name= "au toMappingBehavior" value="PARTIAL" />
+	</settings> -->
     <!-- 设置别名 -->
-    <typeAliases>
+    <!-- <typeAliases>
         <package name="com.yoshopping.model" />
-    </typeAliases>
+    </typeAliases> -->
     <environments default="mysql">
     	<environment id="mysql">
     		<transactionManager type= "JDBC" />
     		<dataSource type="POOLED">
-    			<property name="driver" value="com.mysql.jdbc.Driver" />  
-        		<property name="url" value="jdbc:mysql://localhost:3306/yoshopping?useSSL=false" />  
-        		<property name="username" value="armon" />  
-        		<property name="password" value="1510120036" />
+    			<property name="driver" value="${jdbc.driver}" />  
+        		<property name="url" value="${jdbc.url}" />  
+        		<property name="username" value="${jdbc.username}" />  
+        		<property name="password" value="${jdbc.password}" />
     		</dataSource>
     	</environment>
     </environments>

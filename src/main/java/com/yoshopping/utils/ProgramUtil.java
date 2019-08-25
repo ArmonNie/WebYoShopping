@@ -1,4 +1,4 @@
-package com.yoshopping.test;
+package com.yoshopping.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.yoshopping.dao.UserDao;
 import com.yoshopping.model.User;
 
-public class ProgramTest {
+public class ProgramUtil {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -23,23 +23,13 @@ public class ProgramTest {
 		UserDao ud = (UserDao)ac.getBean("userDao");
 		User user = ud.findByUsername("Armon");
 		System.out.println(user.toString());*/
-		
-		SqlSessionFactory sqlSessionFactory;
-		InputStream inputStream;
-		SqlSession sqlSession;
-		try {
-			inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-			sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
-			sqlSession = sqlSessionFactory.openSession();
-			
-			User user = sqlSession.selectOne("com.yoshopping.mapping"
-		    		+ ".UserMapper.findByUsername", 1);
-		    System.out.println(user.toString());
-		    sqlSession.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		//数据库联接测试
+		SqlSession sqlSession = MyBatisUtil.getSqlsession();
+		User user = sqlSession.selectOne("com.yoshopping.mapping"
+				+ ".UserMapper.findByUsername", 1);
+		System.out.println(user.toString());
+		sqlSession.close();
 	     
 	}
 

@@ -8,8 +8,8 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- 启动自动扫描控制器 -->
-    <!--<context:component-scan base-package="com.yoshopping.controller" />-->
+    <!-- 使用注解形式的Controller必须启动自动扫描控制器 -->
+    <context:component-scan base-package="com.yoshopping.controller" />
 
     <!-- 扩充了注解驱动，可以将请求参数绑定到控制器参数 -->
     <!--<mvc:annotation-driven/> -->
@@ -80,15 +80,17 @@
     <!-- 处理器映射器--> 
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
     </bean>
-    <!-- 处理器适配器--> 
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
-    </bean>
-    <!-- 视图解析器--> 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    </bean>
+    
+    
+    <!-- 处理器适配器(使用注解形式Controller不需要，接口形式Controller才需要)--> 
+   <!--  <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
+    </bean> -->
+    <!-- 视图解析器(使用注解形式Controller不需要，接口形式Controller才需要)--> 
+    <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    </bean> -->
     
     <!-- Controller配置--> 
     <bean name="/LoginController" 
-    class="com.yoshopping.controller.LoginController">
+    	class="com.yoshopping.controller.LoginController">
     </bean>
 </beans>
