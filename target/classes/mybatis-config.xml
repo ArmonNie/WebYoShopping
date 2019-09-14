@@ -8,6 +8,17 @@
     <typeAliases>
         <package name="com.yoshopping.model" />
     </typeAliases>
+    <environments default="mysql">
+    	<environment id="mysql">
+    		<transactionManager type= "JDBC" />
+    		<dataSource type="POOLED">
+    			<property name="driver" value="com.mysql.jdbc.Driver" />  
+        		<property name="url" value="jdbc:mysql://localhost:3306/yoshopping?useSSL=false" />  
+        		<property name="username" value="armon" />  
+        		<property name="password" value="1510120036" />
+    		</dataSource>
+    	</environment>
+    </environments>
     <mappers>
     	<mapper resource="com/yoshopping/mapping/UserMapper.xml"/>
     </mappers>
