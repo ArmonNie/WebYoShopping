@@ -18,8 +18,9 @@
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
         <!-- 关于此处路径不能写错，否则无法实现注入 -->
-        <!-- <param-value>classpath:resources/applicationContext.xml</param-value>   -->
-    	<param-value>/WEB-INF/classes/resources/applicationContext.xml</param-value>
+        <!-- <param-value>classpath:resources/applicationContext.xml</param-value> -->
+    	<param-value>classpath*:/applicationContext.xml</param-value>
+    	<!-- <param-value>/WEB-INF/classes/resources/applicationContext.xml</param-value> -->
     </context-param>
     
     
@@ -50,7 +51,9 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
         <init-param>  
             <param-name>contextConfigLocation</param-name>  
-            <param-value>classpath:spring-mvc.xml</param-value>  
+            <!-- <param-value>classpath:spring-mvc.xml</param-value>  -->
+            <param-value>classpath*:/spring-mvc.xml</param-value>
+            <!-- <param-value>/WEB-INF/classes/resources/spring-mvc.xml</param-value>  -->
         </init-param>  
         <load-on-startup>1</load-on-startup>  
         <async-supported>true</async-supported>  

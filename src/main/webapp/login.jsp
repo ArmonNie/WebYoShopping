@@ -6,7 +6,7 @@
 <title>登录</title>
 </head>
 <body>
-<p>in</p>
+<p>hello</p>
 <form action="/WebYoShopping/LoginController?username=Armon" method="post">
 <label>账号：</label>
 <input type="text" id="txtUsername" name="username" placeholder="请输入账号" /><br/>
