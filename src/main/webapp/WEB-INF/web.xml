@@ -7,13 +7,19 @@
 	<display-name>电商网站</display-name>
 	<!-- 配置首页 若不显示指出，默认会用index.jsp-->
 	<welcome-file-list>
-		<welcome-file>login.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-  
+	
+  	<!-- Spring监听器，以此方式启动Spring容器 -->  
+    <listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>
     <!-- 指定Spring配置文件 -->  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath:applicationContext.xml</param-value>  
+        <!-- 关于此处路径不能写错，否则无法实现注入 -->
+        <!-- <param-value>classpath:resources/applicationContext.xml</param-value>   -->
+    	<param-value>/WEB-INF/classes/resources/applicationContext.xml</param-value>
     </context-param>
     
     
@@ -31,11 +37,6 @@
         <filter-name>encodingFilter</filter-name>  
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
-    
-    <!-- Spring监听器，以此方式启动Spring容器 -->  
-    <listener>  
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
-    </listener>
     
     <!-- 防止Spring内存溢出监听器 -->  
     <!-- <listener>  

@@ -11,8 +11,8 @@ public class SpringTest {
 		// TODO Auto-generated method stub
 		ApplicationContext applicationContext = 
 				new ClassPathXmlApplicationContext("applicationContext.xml");
-		//User user = (User)applicationContext.getBean("user");
-		User user = applicationContext.getBean("user", User.class);
+		User user = (User)applicationContext.getBean("user");
+		//User user = applicationContext.getBean("user", User.class);
 		System.out.println(user.toString());
 	}
 

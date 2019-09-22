@@ -49,7 +49,7 @@ public class LoginController{
 		User user = (User)applicationContext.getBean("user");
 		user.setUser_login_name("Tom");*/
 		mav.addObject("name", arg0.getParameter("username"));
-		mav.setViewName("/index.jsp");
+		mav.setViewName("/WEB-INF/page/Login.jsp");
 		return mav;
 	}
 }
