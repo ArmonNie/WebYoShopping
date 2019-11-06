@@ -19,6 +19,7 @@
     <!-- <typeAliases>
         <package name="com.yoshopping.model" />
     </typeAliases> -->
+    <!--  链接MySQL数据库的enviroments元素配置 -->
     <environments default="mysql">
     	<environment id="mysql">
     		<transactionManager type= "JDBC" />

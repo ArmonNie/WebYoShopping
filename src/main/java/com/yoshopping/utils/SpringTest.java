@@ -12,6 +12,9 @@ public class SpringTest {
 		ApplicationContext applicationContext = 
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		User user = (User)applicationContext.getBean("user");
+		user.setUser_login_id(1);
+		user.setUser_login_name("Armon");
+		user.setUser_login_password("Ilovelm417520");
 		//User user = applicationContext.getBean("user", User.class);
 		System.out.println(user.toString());
 	}
