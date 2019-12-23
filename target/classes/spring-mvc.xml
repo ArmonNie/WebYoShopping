@@ -93,4 +93,7 @@
     <bean name="/LoginController" 
     	class="com.yoshopping.controller.LoginController">
     </bean>
+    <bean name="/HTMLParserController" 
+    	class="com.yoshopping.controller.HTMLParserController">
+    </bean>
 </beans>
