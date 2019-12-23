@@ -5,9 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录</title>
 		<!-- 基本js（jquery）与css（bootstrap） -->
-		<script src="${pageContext.request.contextPath}/WEB_INF/static/base/jquery.js"></script>
-		<script src="${pageContext.request.contextPath}/WEB_INF/static/base/bootstrap/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/WEB_INF/static/base/bootstrap/css/bootstrap.min.css">
+		<script src="static/base/jquery.js"></script>
+		<script src="static/base/bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="static/base/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 	<p>欢迎${name}来到YoShopping~~</p>
