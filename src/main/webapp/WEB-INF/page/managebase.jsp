@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="static/base/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<p>欢迎${name}来到YoShopping~~</p>
+	<p>欢迎${pageTag}来到YoShopping~~</p>
 	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">

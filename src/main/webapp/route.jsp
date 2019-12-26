@@ -4,21 +4,25 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>主页</title>
+	<title>欢迎使用WebYoShpping</title>
+	<!-- 本应用js -->
+	<script src="static/js/app.js"></script>
+	<!-- 本页面行为js -->
+	<script src="static/js/route.js"></script>
 	<!-- 基本js（jquery）与css（bootstrap） -->
 	<script src="static/base/jquery.js"></script>
 	<script src="static/base/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="static/base/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<!-- <form action="/WebYoShopping/LoginController?username=Armon" method="post">
+	<form action="/WebYoShopping/LoginController?username=Armon" method="post">
 		<label>账号：</label>
 		<input type="text" id="txtUsername" name="username" placeholder="请输入账号" /><br/>
 		<label>密码：</label>
 		<input type="password" id="txtPassword" name="password" placeholder="请输入密码" /><br/>
 		<input type="submit" value="提交" />
 		<input type="reset" value="重置" />
-	</form> -->
+	</form> 
 	<div class="container">
 		<!-- 导航栏起始 -->
 		<div class="row">
@@ -28,36 +32,36 @@ pageEncoding="UTF-8"%>
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
 					 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
 					 <span class="icon-bar"></span>
-					 </button> <a class="navbar-brand" href="#">YoShopping</a>
+					 </button> <a id="nav_brand" class="navbar-brand" onclick="return nav_click(this)">YoShopping</a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							 <a href="#">店铺管理</a>
+							 <a id="nav_shopmanage" onclick="return nav_click(this)">店铺管理</a>
 						</li>
 						<li>
-							 <a href="#">商品管理</a>
+							 <a id="nav_goodsmanage" onclick="return nav_click(this)">商品管理</a>
 						</li>
 						<li>
-							 <a href="#">订单管理</a>
+							 <a id="nav_goodlistmanage" onclick="return nav_click(this)">订单管理</a>
 						</li>
 						<li>
-							 <a href="#">客户管理</a>
+							 <a id="nav_customermanage" onclick="return nav_click(this)">客户管理</a>
 						</li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" hint="请输入你要搜索的店铺，商品以及订单..."/>
 						</div> 
-						<button type="submit" class="btn btn-default">搜索</button>
+						<button id="nav_btn_search" type="submit" class="btn btn-default" onclick="return nav_click(this)">搜索</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							 <a href="#">注册</a>
+							 <a id="nav_register" onclick="return nav_click(this)">注册</a>
 						</li>
 						<li>
-							 <a href="#">登录</a>
+							 <a id="nav_login" onclick="return nav_click(this)">登录</a>
 						</li>
 					</ul>
 				</div>
@@ -78,7 +82,7 @@ pageEncoding="UTF-8"%>
 					希望您使用愉快，如果有任何问题，请及时联系XXX@XXX.com.
 				</p>
 				<p>
-					 <a class="btn btn-primary btn-large" href="#">
+					 <a class="btn btn-primary btn-large" id="route_btn_startmanage" onclick="return route_click(this)">
 					 	开始管理
 					 </a>
 				</p>
@@ -134,13 +138,13 @@ pageEncoding="UTF-8"%>
 						<img alt="300x200" src="http://cdn.ibootstrap.cn/lorempixel.com/600/200/people/default.jpg" />
 						<div class="caption">
 							<h3>
-								Thumbnail label
+								账户管理
 							</h3>
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_accoutmanage" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
 							</p>
 						</div>
 					</div>
@@ -150,13 +154,13 @@ pageEncoding="UTF-8"%>
 						<img alt="300x200" src="http://cdn.ibootstrap.cn/lorempixel.com/600/200/city/default.jpg" />
 						<div class="caption">
 							<h3>
-								Thumbnail label
+								业务管理
 							</h3>
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_businessmanage" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
 							</p>
 						</div>
 					</div>
@@ -166,13 +170,13 @@ pageEncoding="UTF-8"%>
 						<img alt="300x200" src="http://cdn.ibootstrap.cn/lorempixel.com/600/200/sports/default.jpg" />
 						<div class="caption">
 							<h3>
-								Thumbnail label
+								数据分析
 							</h3>
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_dataananyze" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
 							</p>
 						</div>
 					</div>
@@ -204,7 +208,7 @@ pageEncoding="UTF-8"%>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								 <button type="submit" class="btn btn-default">Sign in</button>
+								 <button id="route_btn_login" onclick="return route_click(this)" type="submit" class="btn btn-default">登录</button>
 							</div>
 						</div>
 					</form>

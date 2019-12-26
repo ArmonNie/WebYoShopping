@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="nav"></div>
-	<div class="nav">
-		<p></p>
-		<input>
-	</div>
 
 </body>
 </html>
