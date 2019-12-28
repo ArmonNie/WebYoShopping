@@ -55,7 +55,7 @@ public class LoginController{
 		
 		}*/
 		mav.addObject("name", arg0.getParameter("username"));
-		mav.setViewName("/WEB-INF/page/Main.jsp");
+		mav.setViewName("/WEB-INF/page/managebase.jsp");
 		return mav;
 	}
 }

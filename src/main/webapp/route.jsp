@@ -5,14 +5,15 @@ pageEncoding="UTF-8"%>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>欢迎使用WebYoShpping</title>
-	<!-- 本应用js -->
-	<script src="static/js/app.js"></script>
-	<!-- 本页面行为js -->
-	<script src="static/js/route.js"></script>
+	<!-- 注意：基本js应在应用行为js与页面行为js之前引入 -->
 	<!-- 基本js（jquery）与css（bootstrap） -->
 	<script src="static/base/jquery.js"></script>
 	<script src="static/base/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="static/base/bootstrap/css/bootstrap.min.css">
+	<!-- 本应用js -->
+	<script src="static/js/app.js"></script>
+	<!-- 本页面行为js -->
+	<script src="static/js/route.js"></script>
 </head>
 <body>
 	<form action="/WebYoShopping/LoginController?username=Armon" method="post">
