@@ -16,14 +16,14 @@ pageEncoding="UTF-8"%>
 	<script src="static/js/route.js"></script>
 </head>
 <body>
-	<form action="/WebYoShopping/LoginController?username=Armon" method="post">
+	<!-- <form action="/WebYoShopping/LoginController?username=Armon" method="post">
 		<label>账号：</label>
 		<input type="text" id="txtUsername" name="username" placeholder="请输入账号" /><br/>
 		<label>密码：</label>
 		<input type="password" id="txtPassword" name="password" placeholder="请输入密码" /><br/>
 		<input type="submit" value="提交" />
 		<input type="reset" value="重置" />
-	</form> 
+	</form>  -->
 	<div class="container">
 		<!-- 导航栏起始 -->
 		<div class="row">
@@ -39,16 +39,16 @@ pageEncoding="UTF-8"%>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							 <a id="nav_shopmanage" onclick="return nav_click(this)">店铺管理</a>
+							 <a id="nav_businessmanage" onclick="return nav_click(this)">业务管理</a>
 						</li>
 						<li>
-							 <a id="nav_goodsmanage" onclick="return nav_click(this)">商品管理</a>
+							 <a id="nav_personalmessage" onclick="return nav_click(this)">个人信息</a>
 						</li>
 						<li>
-							 <a id="nav_goodlistmanage" onclick="return nav_click(this)">订单管理</a>
+							 <a id="nav_dataananyze" onclick="return nav_click(this)">数据统计</a>
 						</li>
 						<li>
-							 <a id="nav_customermanage" onclick="return nav_click(this)">客户管理</a>
+							 <a id="nav_systemconfig" onclick="return nav_click(this)">系统设置</a>
 						</li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
@@ -74,12 +74,12 @@ pageEncoding="UTF-8"%>
 		<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="jumbotron">
-				<h1>
-					你好，欢迎来到电商服务方系统！
-				</h1>
+				<h2>
+					你好，欢迎来到服务提供方管理系统！
+				</h2>
 				<p>
-					本系统主要为店铺老板提供对自己的店铺进行管理的解决方案。通过
-					本系统您可以对于自己的店铺，商品，订单，以及客户进行一个完整的管理。
+					本系统主要为服务提供方提供对自己的经营业务进行管理的解决方案。通过
+					本系统您可以对于自己的业务，个人信息，同时系统还会为您提供数据分析。
 					希望您使用愉快，如果有任何问题，请及时联系XXX@XXX.com.
 				</p>
 				<p>
@@ -102,10 +102,10 @@ pageEncoding="UTF-8"%>
 						<img alt="" src="http://cdn.ibootstrap.cn/lorempixel.com/1600/500/sports/1/default.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								商铺管理
+								业务管理
 							</h4>
 							<p>
-								帮助您愉快，效率的解决商铺的管理问题~~
+								帮助您愉快，效率的解决业务的管理问题~~
 							</p>
 						</div>
 					</div>
@@ -113,10 +113,10 @@ pageEncoding="UTF-8"%>
 						<img alt="" src="http://cdn.ibootstrap.cn/lorempixel.com/1600/500/sports/2/default.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								商品管理
+								个性化管理
 							</h4>
 							<p>
-								商品管理能够帮您快速录入并管理您商铺出售的商品。
+								系统为您提供个性化设置，根据自己偏好改变页面显示风格吧~~
 							</p>
 						</div>
 					</div>
@@ -124,10 +124,10 @@ pageEncoding="UTF-8"%>
 						<img alt="" src="http://cdn.ibootstrap.cn/lorempixel.com/1600/500/sports/3/default.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								订单、客户管理
+								数据分析
 							</h4>
 							<p>
-								及时接收每一份订单，保证您不会遗漏任何一个赚钱的机会~~
+								本系统会通过专业的数据收集以及分析为您提供特定的大数据服务，为您的业务上升提供帮助~~
 							</p>
 						</div>
 					</div>
@@ -139,13 +139,15 @@ pageEncoding="UTF-8"%>
 						<img alt="300x200" src="http://cdn.ibootstrap.cn/lorempixel.com/600/200/people/default.jpg" />
 						<div class="caption">
 							<h3>
-								账户管理
+								业务管理
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								本系统覆盖业务管理所有流程。通过本系统你可以方便的对于店铺虚拟门面，商品管理，订单管理等业务轻松一站式解决~~
 							</p>
 							<p>
-								 <a class="btn btn-primary" id="route_btn_accoutmanage" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_busnessmanage" onclick="return route_click(this)">
+								 了解更多
+								 </a> 
 							</p>
 						</div>
 					</div>
@@ -155,13 +157,15 @@ pageEncoding="UTF-8"%>
 						<img alt="300x200" src="http://cdn.ibootstrap.cn/lorempixel.com/600/200/city/default.jpg" />
 						<div class="caption">
 							<h3>
-								业务管理
+								信息管理
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								为了更方便为您提供优质搞笑的服务，希望你能给我们提供最真实的信息，我们保证不会写路您的个人信息~~
 							</p>
 							<p>
-								 <a class="btn btn-primary" id="route_btn_businessmanage" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_messagemanage" onclick="return route_click(this)">
+								 了解更多
+								 </a> 
 							</p>
 						</div>
 					</div>
@@ -174,20 +178,20 @@ pageEncoding="UTF-8"%>
 								数据分析
 							</h3>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+								数据分析，结合最新的行业行情以及最近您的经营数据，对前景进行预测，让您在避免亏损的道路上永远快人一步...
 							</p>
 							<p>
-								 <a class="btn btn-primary" id="route_btn_dataananyze" onclick="return route_click(this)">Action</a> <a class="btn" href="#">Action</a>
+								 <a class="btn btn-primary" id="route_btn_dataananyze" onclick="return route_click(this)">
+								 了解更多
+								 </a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row clearfix">
-				<div class="col-md-2 column">
-				</div>
-				<div class="col-md-8 column">
-					<form class="form-horizontal" role="form">
+				<div class="col-md-5 column">
+				<form class="form-horizontal" role="form">
 						<div class="form-group">
 							 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 							<div class="col-sm-10">
@@ -215,6 +219,34 @@ pageEncoding="UTF-8"%>
 					</form>
 				</div>
 				<div class="col-md-2 column">
+				</div>
+				<div class="col-md-5 column">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="inputEmail3" />
+							</div>
+						</div>
+						<div class="form-group">
+							 <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassword3" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									 <label><input type="checkbox" />Remember me</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								 <button id="route_btn_login" onclick="return route_click(this)" type="submit" class="btn btn-default">登录</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!-- 从此处上方添加正文内容 -->

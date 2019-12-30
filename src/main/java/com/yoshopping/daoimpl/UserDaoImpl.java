@@ -1,7 +1,6 @@
 package com.yoshopping.daoimpl;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
-
 import com.yoshopping.dao.UserDao;
 import com.yoshopping.model.User;
 

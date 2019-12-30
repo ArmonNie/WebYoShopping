@@ -33,5 +33,6 @@
     </environments>
     <mappers>
     	<mapper resource="com/yoshopping/mapping/UserMapper.xml"/>
+    	<mapper resource="com/yoshopping/mapping/ProductMapper.xml"/>
     </mappers>
 </configuration>

@@ -34,26 +34,26 @@ function nav_click(data){
 		//send_request_withoutresponse(data,"http://localhost:8080/WebYoShopping/NavController");
 		window.location.href = 'http://localhost:8080/WebYoShopping/';
 	}
-	//点击店铺管理，跳转到业务界面
-	if(data.id == 'nav_shopmanage'){
+	//点击业务管理，跳转到业务界面
+	if(data.id == 'nav_businessmanage'){
 		console.log("你点击目标id为" + data.id + ",重新定位中...");
 		window.location.href = '/WebYoShopping/NavController?pageTag=Main';
 		//window.onload="/WebYoShopping/NavController?pageTag=Main";
 	}
-	//点击商品管理，跳转到业务界面
-	if(data.id == 'nav_goodsmanage'){
+	//点击个人信息，跳转到业务界面
+	if(data.id == 'nav_personalmessage'){
 		console.log("你点击目标id为" + data.id + ",重新定位中...");
 		window.location.href = '/WebYoShopping/NavController?pageTag=Main';
 		//window.onload="http://localhost:8080/WebYoShopping/NavController?pageTag=Main";
 	}
-	//点击订单管理，跳转到业务界面
-	if(data.id == 'nav_goodlistmanage'){
+	//点击数据分析，跳转到业务界面
+	if(data.id == 'nav_dataananyze'){
 		console.log("你点击目标id为" + data.id + ",重新定位中...");
 		window.location.href = '/WebYoShopping/NavController?pageTag=Main';
 		//window.onload="/WebYoShopping/NavController?pageTag=Main";
 	}
-	//点击客户管理，跳转到业务界面
-	if(data.id == 'nav_customermanage'){
+	//点击系统设置，跳转到业务界面
+	if(data.id == 'nav_systemconfig'){
 		console.log("你点击目标id为" + data.id + ",重新定位中...");
 		window.location.href = '/WebYoShopping/NavController?pageTag=Main';
 		//window.onload="/WebYoShopping/NavController?pageTag=Main";
