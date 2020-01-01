@@ -1,5 +1,5 @@
 /*
- * 整体的js事件
+ * 整体的js事件（如何import以及export）
  */
 /*
  * 发送的前端请求：
@@ -74,5 +74,16 @@ function nav_click(data){
 
 //侧边导航栏js行为定义
 function left_nav_click(data){
-	alert(data.id);
+	if(data.id == 'panel-49018-goodsmanage'){
+		console.log("你点击目标id为" + data.id + ",重新定位中...");
+		$("#managebase_content").load("static/page/businessmanage/goodsmanage.html .goodsmanage_content");
+	}
+	if(data.id == 'panel-49018-messagemanage'){
+		console.log("你点击目标id为" + data.id + ",重新定位中...");
+		$("#managebase_content").load("static/page/personalemessage/shopmessagemanage.html .shopmessagemanage_content");
+	}
+	if(data.id == 'panel-49018-systemconfig'){
+		console.log("你点击目标id为" + data.id + ",重新定位中...");
+		
+	}
 }
